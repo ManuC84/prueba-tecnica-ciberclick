@@ -14,7 +14,7 @@ require("fs").writeFile(
 
   function (err) {
     if (err) {
-      console.error("Crap happens");
+      console.error("Something went wrong");
     }
   }
 );
