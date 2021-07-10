@@ -1,8 +1,9 @@
+//Importamos los inputs formateados como strings dentro de un array para poder trabajar con ellos
 import formattedInputs from "./formattedInputs.js";
 
 let inputToObj = [];
 
-//Convertir en objetos a cada input para poder trabajar con ellos más fácilmente
+//Convertir en objetos a cada linea del input para poder trabajar con ellos más fácilmente
 formattedInputs.forEach((input) => {
   let obj = {};
 
@@ -22,9 +23,9 @@ const resultadoPrimeraParte = () => {
 
   inputToObj.forEach(({ startNum, endNum, letter, password }) => {
     const rgxp = new RegExp(letter, "g");
-
+    //Conseguir cuantas letras en la contraseña coinciden con la letra provista
     const letterMatches = password.split(new RegExp(letter, "gi")).length - 1;
-
+    //Si está dentro del rango agregar a las contraseñas validas
     if (letterMatches >= startNum && letterMatches <= endNum) validPasswords++;
   });
 
@@ -36,13 +37,15 @@ const resultadoPrimeraParte = () => {
 //Función para obtener resultado de segunda parte
 const resultadoSegundaParte = () => {
   let validPasswords = 0;
-
+  //Utilizamos función para determinar el operador lógico OR exclusivo
   function myXOR(a, b) {
     return (a || b) && !(a && b);
   }
+
   inputToObj.forEach(({ startNum, endNum, letter, password }) => {
     const checkStart = password[startNum - 1] == letter;
     const checkEnd = password[endNum - 1] == letter;
+    //Si una de las dos condiciones aplican de forma exclusiva agregamos a las contraseñas validas.
     if (myXOR(checkStart, checkEnd)) validPasswords++;
   });
 
