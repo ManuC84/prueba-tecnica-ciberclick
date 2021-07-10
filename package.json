@@ -5,7 +5,8 @@
   "description": "",
   "main": "formattedInputs.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node problema1.js && node problema2.js"
   },
   "keywords": [],
   "author": "",

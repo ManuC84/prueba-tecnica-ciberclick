@@ -1,3 +1,3 @@
 ## Prueba Técnica Cyberclick
 
-Por favor ejecutar los archivos problema1.js y problema2.js para obtener las respuestas de cada ejercicio en la consola. Espero que sea de su agrado.
+Instrucciones: En caso de clonar el repositorio de github hacer npm init y luego npm start para ver los resultados de los ejercicios en consola. En caso de bajar el archivo comprimido solamente hacer npm start.
